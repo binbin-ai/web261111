@@ -76,7 +76,7 @@ const posterUrl = (path, size) => {
 console.log(posterUrl(movies[0].poster, "w342"));
 
 // renderCards : 영화 배열 ⇒ 보드에 카드 생성(반환값 없음) 
-function renderCards(list) {
+const renderCards = (list) =>  {
     const board = document.querySelector(".board");
     board.innerHTML = "";
     for (const m of list) {
@@ -99,7 +99,8 @@ function renderCards(list) {
     document.querySelector("#count").textContent = list.length + "편";
 }
 
-function sortBy(list, key, desc) {
+
+const sortBy = (list, key, desc) => {
  const copy = [...list];
  copy.sort((a, b) => {
  if (typeof a[key] === "string") return a[key].localeCompare(b[key]);
@@ -108,8 +109,9 @@ function sortBy(list, key, desc) {
  if (desc) copy.reverse();
  return copy;
 }
+ 
 // applySort : 선택 상자 값으로 정렬해서 다시 그리기(반환값 없음)
-function applySort() {
+const applySort = () => {
  const key = document.getElementById("sort").value;
  renderCards(sortBy(movies, key, key !== "title"));
 }
