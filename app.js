@@ -4,17 +4,17 @@
 function average(list) {
     let sum = 0;
     for (const m of list) {
-    sum += m.rating;
+        sum += m.rating;
     }
     return sum / list.length;
 }
 console.log("평균:", average(movies));
-    
+
 // best : 영화 배열 ⇒ 최고 평점 영화 제목
 const best = (list) => {
     let top = list[0]
-    for(const i of list){
-        if(i.rating > top.rating){
+    for (const i of list) {
+        if (i.rating > top.rating) {
             top = i;
         }
     }
@@ -25,8 +25,8 @@ console.log("최고:", best(movies));
 // filterByRating : 영화 배열, 기준 평점 ⇒ 평점 8점이상 개수 반환
 const filterByRating = (list, min) => {
     let cnt = 0;
-    for(const i of list){
-        if(i.rating > min){
+    for (const i of list) {
+        if (i.rating > min) {
             cnt++;
         }
     }
@@ -39,13 +39,13 @@ const sortByRating = (list) => {
     let tmp = 0;
     let arr = [];
 
-    for(let i = 0; i < list.length; i++){
+    for (let i = 0; i < list.length; i++) {
         arr[i] = list[i];
     }
-    
-    for(let i = 0; i < arr.length; i++){
-        for(let j = i+1; j < arr.length; j++){
-            if(arr[i].rating < arr[j].rating){
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i].rating < arr[j].rating) {
                 tmp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = tmp;
@@ -62,21 +62,56 @@ console.log("정렬 2위:", sorted[1].title, "/ 원본 2번:", movies[1].title);
 const yearsSince = (dateStr) => {
 
     let now_year = 2026;
-    let last_year = dateStr.slice(0,4);
+    let last_year = dateStr.slice(0, 4);
     last_year = parseInt(last_year);
     return now_year - last_year
-    
+
 }
 console.log(yearsSince(movies[0].date) + "년 전 개봉");
 
-const posterUrl = (path, size)=>{
+const posterUrl = (path, size) => {
     return `https://image.tmdb.org/t/p/${size}/${path}`;
 }
 
 console.log(posterUrl(movies[0].poster, "w342"));
 
+// renderCards : 영화 배열 ⇒ 보드에 카드 생성(반환값 없음) 
+function renderCards(list) {
+    const board = document.querySelector(".board");
+    board.innerHTML = "";
+    for (const m of list) {
+        const card = document.createElement("article");
+        card.className = "card";
+        card.dataset.id = m.id;
+        card.onclick = function(){ alert(m.overview); };
+        if (m.rating >= 8) {
+            card.classList.add("hot");
+        }
+        card.innerHTML = ` 
+      <img class="poster" src="${posterUrl(m.poster, "w342")}" alt="${m.title} 포스터"> 
+      <span class="badge">${m.rating}</span> 
+      <div class="info"> 
+        <h2>${m.title}</h2> 
+        <p class="year">${m.year}</p> 
+      </div>`;
+        board.appendChild(card);
+    }
+    document.querySelector("#count").textContent = list.length + "편";
+}
 
-document.title = "내 영화 " + movies.length + "편";
-console.table(sortByRating(movies));
+function sortBy(list, key, desc) {
+ const copy = [...list];
+ copy.sort((a, b) => {
+ if (typeof a[key] === "string") return a[key].localeCompare(b[key]);
+ return a[key] - b[key];
+ });
+ if (desc) copy.reverse();
+ return copy;
+}
+// applySort : 선택 상자 값으로 정렬해서 다시 그리기(반환값 없음)
+function applySort() {
+ const key = document.getElementById("sort").value;
+ renderCards(sortBy(movies, key, key !== "title"));
+}
 
-document.getElementById("out").textContent = "평균 " + average(movies).toFixed(1) + "점, 최고 " + best(movies)
+applySort();
