@@ -17,7 +17,9 @@
   </p>
 
   <!-- DOM 섹션 -->
-  <h2 style="color: #343a40; margin-top: 40px; border-left: 4px solid #20c997; padding-left: 10px;">DOM과 JavaScript: 문서를 동적으로</h2>
+  <h2 style="color: #343a40; margin-top: 40px; border-left: 4px solid #20c997; padding-left: 10px;">DOM과 JavaScript</h2>
+  
+  <b>DOM
   
   <p style="line-height: 1.8; color: #495057;">
     정적인 HTML 문서를 동적으로 변환해 주는 것이 바로 <strong>DOM (Document Object Model)</strong>이다. 
