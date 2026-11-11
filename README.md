@@ -19,12 +19,14 @@
   <!-- DOM 섹션 -->
   <h2 style="color: #343a40; margin-top: 40px; border-left: 4px solid #20c997; padding-left: 10px;">DOM과 JavaScript</h2>
   
-  <b>DOM
+  <b>DOM</b>
   
   <p style="line-height: 1.8; color: #495057;">
     정적인 HTML 문서를 동적으로 변환해 주는 것이 바로 <strong>DOM (Document Object Model)</strong>이다. 
     브라우저가 HTML 문서를 객체(Object) 형태로 모델링하여, 자바스크립트가 이를 동적으로 조작하고 변경할 수 있게 해주는 중요한 뼈대 역할을 한다.
   </p>
+
+  <b>오늘 배운 JavaScript 함수</b>
 
   <!-- 코드 블록 스타일링 -->
   <div style="background: #282c34; color: #abb2bf; padding: 20px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; font-size: 0.95em; line-height: 1.5; margin-top: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
