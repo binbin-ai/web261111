@@ -26,9 +26,9 @@
 
   <!-- 코드 블록 스타일링 -->
   <div style="background: #282c34; color: #abb2bf; padding: 20px; border-radius: 8px; font-family: 'Courier New', Courier, monospace; font-size: 0.95em; line-height: 1.5; margin-top: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-    <span style="color: #7f848e; font-style: italic;">// 1. 문서의 id, class등의 요소를 선택하는 메서드</span><br>
+    <span style="color: #7f848e; font-style: italic;">1. 문서의 id, class등의 요소를 선택하는 메서드</span><br>
     <span style="color: #e5c07b;">document</span>.<span style="color: #61afef;">querySelector</span>(<span style="color: #98c379;">'.my-class'</span>);<br><br>
-    <span style="color: #7f848e; font-style: italic;">// 2. 찾아낸 부모 요소 안에 새로운 자식 요소를 추가하는 메서드</span><br>
+    <span style="color: #7f848e; font-style: italic;">2. 찾아낸 부모 요소 안에 새로운 자식 요소를 추가하는 메서드</span><br>
     <span style="color: #e5c07b;">element</span>.<span style="color: #61afef;">appendChild</span>(<span style="color: #e06c75;">newElement</span>);
   </div>
  
