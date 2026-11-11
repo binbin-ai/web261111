@@ -1,7 +1,7 @@
 <div style="max-width: 800px; margin: 0 auto; font-family: 'Pretendard', sans-serif; color: #333;">
   <!-- 헤더 섹션 -->
   <div style="border-bottom: 2px solid #20c997; padding-bottom: 10px; margin-bottom: 30px;">
-    <h1 style="color: #12b886; font-size: 2em; margin-bottom: 5px;">[오늘의 개발 일기] DevOps와 DOM</h1>
+    <h1 style="color: #12b886; font-size: 2em; margin-bottom: 5px;">[WEB261111] DevOps, CI/CD, DOM</h1>
 </div>
 
   <!-- DevOps & CI/CD 섹션 -->
